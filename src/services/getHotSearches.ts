@@ -1,4 +1,4 @@
-import { RESOU_URL } from "../Constants";
+import {RESOU_PREFIX, RESOU_URL} from "../Constants";
 import got from "got";
 import { HotSearchInterface } from "../interfaces/hot-search.interface";
 
@@ -14,7 +14,7 @@ export async function getHotSearches(): Promise<HotSearchInterface[]> {
 
   const hss = [...matches].map((x) => ({
     title: x[2],
-    url: RESOU_URL + x[1],
+    url: RESOU_PREFIX + x[1],
   }));
   return hss;
 }
