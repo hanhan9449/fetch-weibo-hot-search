@@ -1,0 +1,30 @@
+name: schedule
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+jobs:
+  auto-fetch:
+    runs-on: ubuntu-latest
+
+    env:
+      TZ: Asia/Shanghai
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: fetch and push to origin
+        run: |
+          git config --local user.email ${{secrets.EMAIL}}
+          git config --local user.name ${{secrets.NAME}}
+          git remote set-url origin https://${{github.actor}}:${{secrets.TOKEN}}@github.com/${{githb.repository}}
+          git pull --rebase
+          npm i
+          npm start:dev
+          git add .
+          git commit -m "update by github action"
+          git push
+

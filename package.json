@@ -1,0 +1,22 @@
+{
+  "name": "fetch-weibo-resou",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "ts-node ./src/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.9.7",
+    "eslint": "^7.16.0",
+    "got": "^11.8.1",
+    "marked": "^1.2.7",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3",
+    "winston": "^3.3.3"
+  }
+}
