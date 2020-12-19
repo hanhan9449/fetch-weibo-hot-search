@@ -1,5 +1,5 @@
 import { getLogger } from "./utils/logger.util";
-import { getHotSearchs } from "./services/getHotSearchs";
+import { getHotSearches } from "./services/getHotSearches";
 import { writeToCurrent } from "./services/writeToCurrent";
 import "dayjs/locale/zh-cn";
 import dayjs from "dayjs";
@@ -9,7 +9,7 @@ import { init } from "./services/init";
 async function main() {
   await init();
   dayjs.locale("zh-cn");
-  const hss = await getHotSearchs();
+  const hss = await getHotSearches();
   writeToArchIve(hss);
   writeToCurrent(hss);
 }

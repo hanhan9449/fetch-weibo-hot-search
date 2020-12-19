@@ -2,7 +2,7 @@ import { RESOU_URL } from "../Constants";
 import got from "got";
 import { HotSearchInterface } from "../interfaces/hot-search.interface";
 
-export async function getHotSearchs(): Promise<HotSearchInterface[]> {
+export async function getHotSearches(): Promise<HotSearchInterface[]> {
   const res = await got(RESOU_URL);
   const text: string = res.body;
   const hssRE = /<a href="(\/weibo\?q=[^"]+)".*?>(.+)<\/a>/g;
