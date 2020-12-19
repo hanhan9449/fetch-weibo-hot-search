@@ -1,6 +1,9 @@
 name: schedule
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     - cron: "0 * * * *"
 jobs:
