@@ -1,11 +1,11 @@
 name: schedule
 
-on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: "0 * * * *"
+# on:
+#   push:
+#     branches:
+#       - main
+#   schedule:
+#     - cron: "0 * * * *"
 jobs:
   auto-fetch:
     runs-on: ubuntu-latest
